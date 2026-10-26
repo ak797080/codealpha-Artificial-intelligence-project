@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f7fb" />
+  <title>Shopwise | FAQ Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="chat-card" aria-label="Online shopping FAQ chatbot">
+      <header class="chat-header">
+        <div class="brand-mark" aria-hidden="true">S</div>
+        <div>
+          <p class="eyebrow">SHOPWISE SUPPORT</p>
+          <h1>Shopping assistant</h1>
+          <p class="availability"><span></span> Here to help with your order</p>
+        </div>
+        <div class="header-tag">FAQ BOT</div>
+      </header>
+
+      <section class="chat-body">
+        <div class="intro">
+          <p class="intro-label">ONLINE SHOPPING FAQs</p>
+          <h2>What can I help you with?</h2>
+          <p>Ask a question in your own words and I’ll find the closest answer.</p>
+        </div>
+
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions">
+          <article class="message bot-message">
+            <div class="avatar" aria-hidden="true">S</div>
+            <div class="message-content">
+              <p class="message-label">SHOPWISE ASSISTANT</p>
+              <div class="bubble">
+                Hi! I can help with shipping, order tracking, returns, refunds, and payments. What would you like to know?
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="suggestions" aria-label="Suggested questions">
+          <span>TRY ASKING</span>
+          <button type="button" class="suggestion" data-question="How can I track my order?">Track my order</button>
+          <button type="button" class="suggestion" data-question="What is your return policy?">Return an item</button>
+          <button type="button" class="suggestion" data-question="When will I get my refund?">Refund status</button>
+        </div>
+      </section>
+
+      <form id="chatForm" class="composer">
+        <label class="visually-hidden" for="questionInput">Your question</label>
+        <input
+          id="questionInput"
+          name="message"
+          type="text"
+          maxlength="500"
+          autocomplete="off"
+          placeholder="Type your question here..."
+          required
+        />
+        <button id="sendButton" type="submit" aria-label="Send question">
+          <span>Send</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+      <p class="privacy-note">Answers are selected from our online shopping FAQ.</p>
+    </section>
+    <p class="page-caption">SMARTER ANSWERS, ONE QUESTION AT A TIME</p>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
